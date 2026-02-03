@@ -3,7 +3,7 @@ import numpy as np
 from scipy.signal import butter, iirnotch, filtfilt, welch
 
 Fs = 2000
-ruta_base = 'C:/Users/usuario/Desktop/APS/Codigos/Proyecto Final GF APS/DATOS1/' #Colocar direccion de la carpeta con los datos
+ruta_base = 'DATOS1/' #Colocar direccion de la carpeta con los datos
 resultados_poblacionales = []
 
 def filtrar_emg(senal):
@@ -54,4 +54,5 @@ if len(resultados_poblacionales) > 0:
     res_matriz = np.array(resultados_poblacionales)
     promedios = np.mean(res_matriz, axis=0)
     print("\n--- RESULTADOS PROMEDIO DEL GRUPO ---")
+
     print(f"RMS: {round(promedios[0], 2)}% | MNF: {round(promedios[1], 2)}% | MDF: {round(promedios[2], 2)}%")
